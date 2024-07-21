@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Directory</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="my-4 text-center">
+      <h1>Student Directory</h1>
+    </header>
+    <main>
+      <section id="controls" class="mb-4">
+        <div class="form-row">
+          <div class="col">
+            <input type="text" id="searchName" class="form-control" placeholder="Search by name">
+          </div>
+          <div class="col">
+            <select id="filterGender" class="form-control" title="gender">
+              <option value="">Filter by gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="col">
+            <select id="filterAge" class="form-control" title="age">
+              <option value="">Filter by age</option>
+              <option value="18-20">18-20</option>
+              <option value="21-23">21-23</option>
+              <option value="24-26">24-26</option>
+            </select>
+          </div>
+          <div class="col">
+            <button id="searchButton" class="btn btn-primary">Search/Filter</button>
+          </div>
+          <div class="col">
+            <button id="showAllButton" class="btn btn-secondary" data-showing="false">Show All Students</button>
+          </div>
+        </div>
+      </section>
+      <section id="studentTable">
+        <!-- Student table will be displayed here -->
+      </section>
+    </main>
+  </div>
+
+  <!-- Bootstrap Modal for Adding New Student -->
+  <div class="modal fade" id="addStudentModal" tabindex="-1" aria-labelledby="addStudentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addStudentModalLabel">Add New Student</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="addStudentForm">
+            <div class="form-group">
+              <label for="newStudentName">Name</label>
+              <input type="text" class="form-control" id="newStudentName" required>
+            </div>
+            <div class="form-group">
+              <label for="newStudentAge">Age</label>
+              <input type="number" class="form-control" id="newStudentAge" required>
+            </div>
+            <div class="form-group">
+              <label for="newStudentGender">Gender</label>
+              <select class="form-control" id="newStudentGender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="addNewStudentButton">Add Student</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Modal for Editing Student -->
+  <div class="modal fade" id="editStudentModal" tabindex="-1" aria-labelledby="editStudentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editStudentModalLabel">Edit Student</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="editStudentForm">
+            <div class="form-group">
+              <label for="editStudentName">Name</label>
+              <input type="text" class="form-control" id="editStudentName">
+            </div>
+            <div class="form-group">
+              <label for="editStudentAge">Age</label>
+              <input type="number" class="form-control" id="editStudentAge">
+            </div>
+            <div class="form-group">
+              <label for="editStudentGender">Gender</label>
+              <select class="form-control" id="editStudentGender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-primary" id="saveStudentButton">Save changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script defer src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+/* General Body Styles */
+body {
+  background: linear-gradient(90deg, black, teal);
+  background-size: 200% 200%;
+  animation: backgroundAnimation 15s ease infinite;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Container Styling */
+.container {
+  margin-top: 30px;
+  position: relative;
+}
+
+/* Header Styles */
+header h1 {
+  color: teal;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* Table Styling */
+.table {
+  background: linear-gradient(135deg, black, cyan);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Table Header Styles */
+.table thead {
+  background: linear-gradient(135deg, black, cyan);
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.table th {
+  padding: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+}
+
+.table th:hover {
+  background: linear-gradient(135deg, black, teal);
+}
+
+/* Table Row Styles */
+.table tbody tr {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background-color: teal;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.btn-primary {
+  background: teal;
+  border: none;
+  border-radius: 30px;
+  padding: 6px 21px;
+  font-size: 1.1rem;
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 15px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  margin-left: 10px;
+}
+
+.btn-secondary {
+  background-color: black !important;
+  border-radius: 30px;
+  color: cyan !important;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  font-size: larger;
+
+}
+
+.btn-primary:hover {
+  background-color: black;
+  color: cyan;
+  transform: scale(1.05);
+}
+.btn-secondary:hover {
+  background-color: teal;
+  color: black;
+  transform: scale(1.05);
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  color: cyan;
+  background-color: black;
+  border-color: teal;
+  box-shadow: 0 0 0 .2rem teal;
+}
+.btn-secondary.focus, .btn-secondary:focus {
+  color: cyan;
+  background-color: black;
+  border-color: teal;
+  box-shadow: 0 0 0 .2rem teal;
+}
+
+
+.btn-add-student {
+  background-color: black;
+  color: cyan;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.table-header-btn {
+  text-align:center;
+}
+
+/* Modal Animation */
+.modal-content {
+  animation: modalIn 0.5s ease-out;
+}
+
+@keyframes backgroundAnimation {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Form control */
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid teal;
+  border-radius: 1.25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  -webkit-border-radius: 1.25rem;
+  -moz-border-radius: 1.25rem;
+  -ms-border-radius: 1.25rem;
+  -o-border-radius: 1.25rem;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: cyan;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem teal;
+}
+

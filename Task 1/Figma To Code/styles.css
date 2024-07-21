@@ -1,0 +1,222 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a, nav ul li button {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li button:hover {
+    color: #00aaff;
+}
+
+nav ul li button {
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 100px 50px;
+  background: linear-gradient(125deg, #f0f8ff 67%, #00aaff 50%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('wave.svg') no-repeat center center;
+    background-size: cover;
+    transform: translateY(-50%);
+    z-index: -1;
+    animation: wave-animation 10s infinite linear;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translateY(-50%) translateX(0);
+    }
+    100% {
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
+
+.intro {
+    max-width: 600px;
+}
+
+.intro h1 {
+    color: #00aaff;
+}
+
+.intro h2 {
+    color: #333;
+}
+
+.intro p {
+    color: #666;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+.buttons a {
+  color: #fff;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.buttons button:hover {
+    background-color: #007acc;
+    animation: magicalGlow 1s ease-in-out;
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social a svg {
+  color: #007acc;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+.social a svg:hover {
+  transform: scale(1.1);
+}
+.profile-pic img {
+    width: 250px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.profile-pic img:hover {
+    transform: scale(1.1);
+}
+
+.education {
+    background: #00aaff;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.education h2, .education h3 {
+    text-align: center;
+}
+
+.timeline {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.event {
+    background: #fff;
+    color: #00aaff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.event:hover {
+  animation: magicalGlow 1s ease-in-out;
+  
+}
+@keyframes magicalGlow {
+  0% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      background-color: #3498db;
+      color: white;
+  }
+  50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+      background-color: #00aaff;
+      color: white;
+  }
+  100% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      background-color: #3498db;
+  }
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-pic {
+        margin-top: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
