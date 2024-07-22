@@ -61,28 +61,18 @@ nav ul li button {
   background: linear-gradient(125deg, #f0f8ff 67%, #00aaff 50%);
   position: relative;
   overflow: hidden;
+  
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: url('wave.svg') no-repeat center center;
-    background-size: cover;
-    transform: translateY(-50%);
-    z-index: -1;
-    animation: wave-animation 10s infinite linear;
-}
 
-@keyframes wave-animation {
+/* @keyframes wave-animation {
     0% {
         transform: translateY(-50%) translateX(0);
     }
     100% {
         transform: translateY(-50%) translateX(-50%);
     }
-}
+} */
 
 .intro {
     max-width: 600px;
@@ -120,8 +110,9 @@ nav ul li button {
   text-decoration: none;
 }
 
-.buttons button:hover {
+ button:hover {
     background-color: #007acc;
+    animation: magicalGlow 1s ease-in-out;
     
 }
 
@@ -148,7 +139,7 @@ nav ul li button {
 }
 
 .profile-pic img:hover {
-    transform: scale(1.1);
+    animation: magicalGlow 2s ease-in-out;
 }
 
 .education {
