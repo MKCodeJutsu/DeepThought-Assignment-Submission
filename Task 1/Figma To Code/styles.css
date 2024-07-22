@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -118,7 +122,7 @@ nav ul li button {
 
 .buttons button:hover {
     background-color: #007acc;
-    animation: magicalGlow 1s ease-in-out;
+    
 }
 
 .social {
@@ -158,22 +162,85 @@ nav ul li button {
 }
 
 .timeline {
-    max-width: 600px;
-    margin: 0 auto;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #00aaff;
+  transform: translateX(-50%);
 }
 
 .event {
-    background: #fff;
-    color: #00aaff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  color: #00aaff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 45%;
+  box-sizing: border-box;
+  
 }
 .event:hover {
   animation: magicalGlow 1s ease-in-out;
-  
 }
+
+.event:nth-child(odd) {
+  left: 0;
+}
+
+.event:nth-child(even) {
+  left: 55%;
+}
+
+.event::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background: #00aaff;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  left: -10px;
+}
+
+.event:nth-child(even)::before {
+  left: auto;
+  right: -10px;
+}
+
+.event h4 {
+  margin-top: 0;
+}
+
+.event p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .event {
+      width: 100%;
+      left: 0 !important;
+      margin-left: 0;
+  }
+
+  .event::before {
+      left: 50% !important;
+      transform: translateX(-50%);
+  }
+}
+
 @keyframes magicalGlow {
   0% {
       transform: scale(1);
@@ -219,4 +286,8 @@ footer {
     nav ul li {
         margin: 10px 0;
     }
+}
+a {
+  text-decoration: none;
+  color: #00aaff;
 }
